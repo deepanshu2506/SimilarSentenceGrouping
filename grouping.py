@@ -171,12 +171,12 @@ def group_questions(questions):
 
     for i in range(len(labels)):
         if labels[i] == -1:
-            groups[f'group{ctr}'] = [questions[i]]
+            groups[f'{ctr}'] = [questions[i]]
             ctr += 1
-        elif f'group{labels[i]}' in groups:
-            groups[f'group{labels[i]}'].append(questions[i])
+        elif f'{labels[i]}' in groups:
+            groups[f'{labels[i]}'].append(questions[i])
         else:
-            groups[f'group{labels[i]}'] = [questions[i]]
+            groups[f'{labels[i]}'] = [questions[i]]
 
     # pprint(groups)
     groups_json = json.dumps(groups)
@@ -204,4 +204,4 @@ def test():
     print(group_questions(questions))
 
 
-# test()
+test()

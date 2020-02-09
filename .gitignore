@@ -112,6 +112,7 @@ ENV/
 env.bak/
 venv.bak/
 venv1.bak/
+similarSentenceGrouping/
 
 # Spyder project settings
 .spyderproject

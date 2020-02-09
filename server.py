@@ -19,11 +19,12 @@ CORS(app)
 # @cross_origin(origin='*',supports_credentials=True,headers=['Content- Type','Authorization'])
 def rankings():
     # data = json.dumps(request.json)
-    # data = request.get_json(force=True)
-    # print(data)
+    data = request.get_json()
+    print(data)
     # questions = request.json['questions']
     # print(request.form)
-    questions = request.form.getlist('questions[]')
+    questions = data['questions']
+    # print(request.form)
     groups = group_questions(questions)
     response = jsonify(groups)
     response.headers.add('Access-Control-Allow-Origin',"*")
